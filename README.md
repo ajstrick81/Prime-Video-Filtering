@@ -1,4 +1,8 @@
 # Prime-Video-Filtering
+This project has been a massive undertaking. Please be patient as this is still in experimental stages. 
+
+Traditional ad blocking techniques are NOT effective against a machine of a company that thrives off of ad revenue. New game, trick the app into thinking it played the content when it actually bypasses. The harder you block, the more ads the app throws at you. This has worked in a specific instance I've set up, so I can't guarantee your results will be the same as mine. Hopefully, if the ads haven't been fully eliminated, they have been reduced by duration. Enjoy!
+
 
 Ad-Free Prime Video: The "Surgical" DNS Guide (2026)
 This guide provides a verified method for neutralizing Pre-roll and Mid-roll ads on Prime Video (specifically tested on Onn TV/Android TV) using AdGuard Home on my Flint 2 Router.
@@ -12,6 +16,7 @@ For the fastest response times and lowest buffering, use these Upstream DNS sett
 Upstream DNS Servers:
 Plaintext
 https://dns.quad9.net/dns-query
+
 https://dns.cloudflare.com/dns-query
 
 DNS Strategy: Set to Parallel Requests (queries all upstreams and uses the fastest reply).
