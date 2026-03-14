@@ -19,6 +19,8 @@ https://dns.quad9.net/dns-query
 
 https://dns.cloudflare.com/dns-query
 
-DNS Strategy: Set to Parallel Requests (queries all upstreams and uses the fastest reply).
+DNS Strategy: Set to Fastest IP Address Requests (queries all upstreams and uses the fastest reply).
+
+Disable resolving of the IPv6 addresses
 
 Bootstrap DNS: Use 9.9.9.9 and 1.1.1.1.
