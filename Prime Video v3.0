@@ -19,7 +19,7 @@
 ||atv-ps-*.amazon.com^$dnsrewrite=0.0.0.0
 ||p-v-logs.amazon.com^$dnsrewrite=0.0.0.0
 
-! --- 3. CDN Variants - Regex
+! --- 3. Akamaihd CDN Variants - Regex
 /^a\d+avod.*\.akamaihd\.net$/$dnsrewrite=0.0.0.0
 /^a\d+.*evtad.*\.akamaihd\.net$/$dnsrewrite=0.0.0.0
 /^a\d+.*vottevtad.*\.akamaihd\.net$/$dnsrewrite=0.0.0.0
