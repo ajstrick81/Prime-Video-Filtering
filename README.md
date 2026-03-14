@@ -1,6 +1,8 @@
 # Prime-Video-Filtering
 This project has been a massive undertaking. Please be patient as this is still in experimental stages. 
 
+The concept I'm going with is deception over brute force...
+
 Traditional ad blocking techniques are NOT effective against a machine of a company that thrives off of ad revenue. New game --> trick the app into thinking it played the content when it actually bypasses it. I've found that the harder you block the domains, the more ads the app throws at you - it's pretty much a never ending fight and it slows the responsiveness of the app and degrades the overall watching experience. Please remember, this has worked in a specific instance I've set up, so I can't guarantee your results will be the same as mine. Hopefully, if the ads haven't been fully eliminated, they have been reduced by duration. Enjoy!
 
 
