@@ -1,0 +1,29 @@
+Prime Video Filtering Master List - Version 3.0
+
+! --- 1. THE "SAFE HARBOR" (MUST BE FIRST) ---
+! Prevents app panic/lockouts by allowing essential heartbeats
+@@||sonar.prime-video.amazon.dev^
+@@||keho.api.amazonvideo.com^
+@@||qgmg.api.amazonvideo.com^
+@@||p7kg.api.amazonvideo.com^
+@@||*.weblab.a2z.com^
+
+! --- 2. FAST-FAIL REWRITES ---
+! Tells the device the ad-server is dead instantly, skipping the ad 
+||s0s7.api.amazonvideo.com^$dnsrewrite=0.0.0.0
+||*avoddashs3ww-a.akamaihd.net^$dnsrewrite=0.0.0.0
+||*vod-dash-pv-ta-amazon.akamaized.net^$dnsrewrite=0.0.0.0
+||web-checks.a2z.com^$dnsrewrite=0.0.0.0
+
+! --- 3. AD DELIVERY & ORCHESTRATION ---
+||s.amazon-adsystem.com^
+||mads.amazon-adsystem.com^
+||aiv-delivery.net^
+||threeplr*.api.amazonvideo.com^
+||nit*.api.amazonvideo.com^
+
+! --- 4. TELEMETRY & CLEANUP ---
+||device-metrics-us.amazon.com^
+||unagi-na.amazon.com^
+||fls-na.amazon.com^
+||*.api.amazonvideo.com.lan^
