@@ -8,7 +8,7 @@ Ad-Free Prime Video: The "Surgical" DNS Guide (2026)
 This guide provides a verified method for neutralizing Pre-roll and Mid-roll ads on Prime Video (specifically tested on Onn TV/Android TV) using AdGuard Home on my Flint 2 Router.
 
 1. AdGuard Home (Router/Flint 2) Configuration
-To prevent the app from entering "Penalty Mode" (2:30 ads), we use a Safe Harbor strategy.
+to prevent the app from entering "Penalty Mode" (2:30 ads), we use a Safe Harbor strategy. This means that instead of increasing ad duration by blocking the domains, we allow them to think that they are being played. Reverse Uno!
 
 Step A: Optimized Upstream DNS
 For the fastest response times and lowest buffering, use these Upstream DNS settings in Settings > DNS Settings:
