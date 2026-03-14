@@ -14,7 +14,7 @@ Step A: Optimized Upstream DNS
 For the fastest response times and lowest buffering, use these Upstream DNS settings in Settings > DNS Settings:
 
 Upstream DNS Servers:
-Plaintext
+
 https://dns.quad9.net/dns-query
 
 https://dns.cloudflare.com/dns-query
