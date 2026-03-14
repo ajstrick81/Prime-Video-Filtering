@@ -8,6 +8,7 @@
 @@||qgmg.api.amazonvideo.com^
 @@||p7kg.api.amazonvideo.com^
 @@||*.weblab.a2z.com^
+@@||unagi-na.amazon.com^
 
 ! --- 2. FAST-FAIL REWRITES ---
 ||s0s7.api.amazonvideo.com^$dnsrewrite=0.0.0.0
@@ -32,5 +33,4 @@
 
 ! --- 5. TELEMETRY & CLEANUP ---
 ||device-metrics-us.amazon.com^
-||unagi-na.amazon.com^
 ||fls-na.amazon.com^
