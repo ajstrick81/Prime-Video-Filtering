@@ -1,5 +1,5 @@
-! Prime Video Filtering Master List — Version 3.2
-! Updated: 2026-03-14
+! Prime Video Filtering Master List — Version 3.3
+! Updated: 2026-03-15
 
 ! --- 1. THE "SAFE HARBOR" (MUST BE FIRST) ---
 ! Prevents app panic/lockouts by allowing essential heartbeats
