@@ -18,6 +18,12 @@
 ||web-checks.a2z.com^$dnsrewrite=0.0.0.0
 ||atv-ps-*.amazon.com^$dnsrewrite=0.0.0.0
 ||p-v-logs.amazon.com^$dnsrewrite=0.0.0.0
+! abgqa65 CDN family — catches all delivery path variants
+! Covers: vod-dash, pop-vod-dash, emt-cf.live, ta variants
+||abgqa65*.pv-cdn.net^$dnsrewrite=0.0.0.0
+! AWS IoT ad event signaling — rewrite only, not hard block
+! Previous testing showed hard blocking this crashes the app
+||a2hmcwiq4hwfgz-ats.iot.us-east-1.amazonaws.com^$dnsrewrite=0.0.0.0
 
 ! --- 3. Akamaihd CDN Variants - Regex
 /^a\d+avod.*\.akamaihd\.net$/$dnsrewrite=0.0.0.0
