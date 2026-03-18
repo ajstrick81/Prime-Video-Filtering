@@ -1,0 +1,77 @@
+! Prime Video Filtering Master List — Version 3.6
+! Updated: 2026-03-17
+!
+! Key changes from v3.5:
+!  - Added cf-timedtext.aux.pv-cdn.net to safe harbor (subtitle CDN)
+!  - Added emt-fastly.live.pv-cdn.net (Fastly live CDN variant)
+!  - Added zoar.triggers-v1 explicit rewrite (confirmed ad-specific)
+!  - Added abxc3apcastp.na-f.api.amazonvideo.com to safe harbor (TER)
+!  - Added abgqa65*.mt-cf.live.pv-cdn.net coverage
+!  - Confirmed by ad-free vs ad-supported session comparison
+
+! --- 1. SAFE HARBOR (MUST BE FIRST) ---
+@@||keho.api.amazonvideo.com^
+@@||qgmg.api.amazonvideo.com^
+@@||p7kg.api.amazonvideo.com^
+@@||*.weblab.a2z.com^
+@@||unagi-na.amazon.com^
+@@||sonar.prime-video.amazon.dev^
+
+! Subtitle/caption delivery — DO NOT BLOCK
+@@||cf-timedtext.aux.pv-cdn.net^
+
+! TER endpoint — present in both ad-free and ad-supported sessions
+! Core playback routing, not purely ad infrastructure
+@@||abxc3apcastp.na-f.api.amazonvideo.com^
+
+! --- 2. FAST-FAIL REWRITES ---
+||s0s7.api.amazonvideo.com^$dnsrewrite=0.0.0.0
+||web-checks.a2z.com^$dnsrewrite=0.0.0.0
+||atv-ps-*.amazon.com^$dnsrewrite=0.0.0.0
+||p-v-logs.amazon.com^$dnsrewrite=0.0.0.0
+
+! --- 3. ZOAR AD TRIGGER ---
+! Confirmed ad-specific — absent in ad-free sessions
+! Overrides weblab safe harbor for this specific domain
+||zoar.triggers-v1.prod.mobile.weblab.a2z.com^$dnsrewrite=0.0.0.0
+
+! --- 4. AKAMAI AD DELIVERY (all variants) ---
+||*avoddashs3ww-a.akamaihd.net^$dnsrewrite=0.0.0.0
+||*aivottevtad-a.akamaihd.net^$dnsrewrite=0.0.0.0
+||*vod-dash-pv-ta-amazon.akamaized.net^$dnsrewrite=0.0.0.0
+/^a\d+avod.*\.akamaihd\.net$/$dnsrewrite=0.0.0.0
+/^a\d+.*evtad.*\.akamaihd\.net$/$dnsrewrite=0.0.0.0
+/^a\d+.*vottevtad.*\.akamaihd\.net$/$dnsrewrite=0.0.0.0
+
+! --- 5. PV-CDN AD DELIVERY (all prefixes/content types) ---
+! Broad wildcards catch all prefix rotations regardless of content type
+! Movies: abgqa65 / TV Shows: abepmbf, abgarbv / Future: covered by wildcards
+! NOTE: cf-timedtext.aux.pv-cdn.net is explicitly allowed above
+||*.vod-dash.main.amazon.pv-cdn.net^$dnsrewrite=0.0.0.0
+||*.pop-vod-dash.main.amazon.pv-cdn.net^$dnsrewrite=0.0.0.0
+||*.ta.vod-dash.main.amazon.pv-cdn.net^$dnsrewrite=0.0.0.0
+||*.ta.pop-vod-dash.main.amazon.pv-cdn.net^$dnsrewrite=0.0.0.0
+||*.emt-cf.live.pv-cdn.net^$dnsrewrite=0.0.0.0
+||emt-fastly.live.pv-cdn.net^$dnsrewrite=0.0.0.0
+||abgqa65*.pv-cdn.net^$dnsrewrite=0.0.0.0
+||abepmbf*.pv-cdn.net^$dnsrewrite=0.0.0.0
+||abgarbv*.pv-cdn.net^$dnsrewrite=0.0.0.0
+
+! --- 6. AD IMAGES ---
+||images-na.ssl-images-amazon.com/images/S/pv-target-images^$dnsrewrite=0.0.0.0
+||m.media-amazon.com/images/S/pv-target-images^$dnsrewrite=0.0.0.0
+||m.media-amazon.com/images/S/al-na-*^$dnsrewrite=0.0.0.0
+
+! --- 7. AD ORCHESTRATION ---
+||s.amazon-adsystem.com^
+||mads.amazon-adsystem.com^
+||aiv-delivery.net^
+||threeplr*.api.amazonvideo.com^$dnsrewrite=0.0.0.0
+||nit*.api.amazonvideo.com^
+
+! --- 8. IOT AD SIGNALING ---
+||a2hmcwiq4hwfgz-ats.iot.us-east-1.amazonaws.com^$dnsrewrite=0.0.0.0
+
+! --- 9. TELEMETRY ---
+||device-metrics-us.amazon.com^
+||fls-na.amazon.com^
